@@ -1,5 +1,8 @@
 <?php
-    $host = 'asdas';  
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+    $host = 'localhost';  
     $username = 'hr1_hr1db'; 
     $password = 'hr1_hr1db';  
     $dbname = 'hr1_hr1db';  
