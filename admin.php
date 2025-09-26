@@ -1,10 +1,26 @@
 <?php
 session_start();
-if (!isset($_SESSION['Email']) || $_SESSION['Account_type'] !== '1') {
+require_once "Connections.php"; // gives you $Connections (PDO object)
+
+// Make sure session exists
+if (!isset($_SESSION['Email']) || !isset($_SESSION['Account_type'])) {
     header("Location: login.php");
     exit();
 }
+
 $admin_email = $_SESSION['Email'];
+$account_type = $_SESSION['Account_type'];
+
+// Optional: re-check in DB
+$stmt = $Connections->prepare("SELECT Account_type FROM logintbl WHERE Email = :email LIMIT 1");
+$stmt->execute(['email' => $admin_email]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$user || $user['Account_type'] !== '1') {
+    // Not admin → redirect
+    header("Location: login.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
