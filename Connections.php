@@ -1,5 +1,5 @@
 <?php
-    $host = 'localhost';  
+    $host = 'asdas';  
     $username = 'hr1_hr1db'; 
     $password = 'hr1_hr1db';  
     $dbname = 'hr1_hr1db';  
