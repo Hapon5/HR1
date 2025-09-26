@@ -1,5 +1,5 @@
 <?php
-    $host = 'localhost';  
+    $host = '127.0.0.1';  
     $username = 'hr1_hr1db'; 
     $password = 'hr1_hr1db';  
     $dbname = 'hr1_hr1db';  
