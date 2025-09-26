@@ -12,7 +12,7 @@ $admin_email = $_SESSION['Email'];
 $account_type = $_SESSION['Account_type'];
 
 // Optional: re-check in DB
-$stmt = $Connections->prepare("SELECT Account_type FROM hr1_databasehr1 WHERE Email = :email LIMIT 1");
+$stmt = $Connections->prepare("SELECT Account_type FROM logintbl WHERE Email = :email LIMIT 1");
 $stmt->execute(['email' => $admin_email]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
