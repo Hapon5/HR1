@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($EmailErr) && empty($passwordErr)) {
-        $stmt = $Connections->prepare("SELECT * FROM logintbl WHERE Email = :email LIMIT 1");
+        $stmt = $Connections->prepare("SELECT * FROM hr1_databasehr1 WHERE Email = :email LIMIT 1");
         $stmt->execute(['email' => $Email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
