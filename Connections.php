@@ -1,14 +1,13 @@
 <?php
+    $host = 'localhost';  
+    $username = 'hr1_hr1db'; 
+    $password = 'hr1_hr1db';  
+    $dbname = 'hr1_hr1db';  
 
-$host = 'localhost';  
-$username = 'hr1_hr1db'; 
-$password = 'hr1_hr1db';  
-$dbname = 'hr1db';  
-
-$Connections = mysqli_connect($host, $username, $password, $dbname);
+    $Connections = mysqli_connect($host, $username, $password, $dbname);
 
 
-if (!$Connections) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+    if (!$Connections) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 ?>
