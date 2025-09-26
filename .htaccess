@@ -1,0 +1,8 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Make sure this only applies to your subdomain
+RewriteCond %{HTTP_HOST} ^hr1\.cranecali-ms\.com$ [NC]
+
+# Redirect everything to login.php
+RewriteRule ^.*$ index.php [L]
